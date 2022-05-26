@@ -23,5 +23,24 @@ translation = language_translator.translate(
     text=text_to_translate,
     model_id=model_id).get_result()
 
+## English to French
+def english_to_french(text1):
+    frenchtranslation = language_translate.translate(
+        text = text1,
+        model_id = 'en-fr'
+    ).get_result()
+return frenchtranslation.get("translations")[0].get("translation")
+
+
+##  French to English
+def french_to_english(text1):
+    frenchtranslation = language_translate.translate(
+        text = text1,
+        model_id = 'fr-en'
+    ).get_result()
+return frenchtranslation.get("translations")[0].get("translation")
+
+
+
 # Print results
 print(json.dumps(translation, indent=2, ensure_ascii=False))
